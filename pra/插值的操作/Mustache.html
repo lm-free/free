@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>插值的操作</title>
+</head>
+<body>
+	<div id="app">
+		<h2>{{ message }}</h2>
+        <h2>{{ firstName + lastName}}</h2>
+        <h2>{{ firstName + ' ' + lastName}}</h2>
+        <h2>{{ firstName}} {{lastName}}</h2>
+        <h2>{{counter * 2 }}</h2>
+	</div>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+    	el:'#app',
+    	data:{
+    		message: 'ninhao',
+            firstName:'kobe',
+            lastName:'bryant',
+            counter:100
+    	}
+    })
+</script>
+</body>
+</html>

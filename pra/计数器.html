@@ -10,23 +10,33 @@
     <!--
     <button v-on:click="counter++">+</button>
     <button v-on:click="counter--">-</button>-->
-    <button @:click="add">+</button>
-    <button @:click="sub">-</button> //语法糖
+    <button @click="add">+</button>
+    <button @click="sub">-</button> //语法糖
 </div>
 <script src="vue.js"></script>
 <script>
+    const obj = {
+        counter: 0,
+    }
     const app = new Vue({
         el:"#app",
-        data:{
-            counter:0
-        },
+        data: obj,
         methods: {
             add:function () {
                 this.counter++ //this拿到当前对象
             },
             sub:function () {
                 this.counter--
-            }
+            },
+        beforeCreate:function () {
+
+            },
+        created:function () {
+            console.log("11");
+        },
+        mounted: function () {
+            console.log("222");
+        }
         }
     })
 </script>
