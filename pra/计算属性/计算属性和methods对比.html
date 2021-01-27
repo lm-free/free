@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>title</title>
+</head>
+<body>
+<div id="app">
+	<!-- 直接拼接:语法过于繁琐-->
+	<h2>{{fristName}} {{ lastName }}</h2>
+	<!-- 通过定义methods 写几次打印几次 性能不好
+	<h2>{{getFullName()}}</h2>
+	<h2>{{getFullName()}}</h2>
+	<h2>{{getFullName()}}</h2>
+	<h2>{{getFullName()}}</h2>-->
+	 <!-- 通过computed 只打印一次 性能好-->
+	 <h2>{{fullName}}</h2>
+	 <h2>{{fullName}}</h2>
+	 <h2>{{fullName}}</h2>
+</div>
+<script src="vue.js"></script>
+<script>
+	const app = new Vue({
+		el:'#app',
+		data:  {
+			fristName:'ddd',
+			lastName:'ddvvd'
+		},
+		methods: {
+			getFullName:function () {
+				console.log('getFullName')
+				return this.fristName + ' ' + this.lastName
+			}
+		},
+		computed: {
+				fullName:function () {
+					console.log('fullName')
+				return this.fristName + ' ' + this.lastName
+			}
+		}
+	})
+</script>
+</body>
+</html>

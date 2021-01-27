@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{fullName}}</h2>
+    </div>
+<script src="vue.js"></script>
+<script type="text/javascript">
+    const app = new Vue({
+        el:'#app',
+        data:{
+            fristName:'koi',
+            lastName:'last'
+        },
+        //计算属性一般是没有set方法，只读属性
+        computed: {
+            fullName: {
+                set:function (newvalue) {
+                    console.log("---",newvalue);
+                    const names = newvalue.split(' ');
+                    this.fristName = names[0];
+                    this.lastName = names[1]
+                },
+                get:function () {
+                    return this.fristName + ' ' + this.lastName
+                }
+            }
+        }
+        // es6写法 最终按这样写
+        // fullName: function () {
+         //   return this.fristName + ' ' + this.lastName
+        //}
+    })
+</script>
+</body>
+</html>
