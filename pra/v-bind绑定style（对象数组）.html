@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--<h2 :style="{key(css属性名：value属性值)}">{{ message }}</h2>-->
+    <!--必须加上单引号，否则当做变量解析-->
+    <!-- <h2 :style="{fontSize:'50px'}">{{ message }}</h2>-->
+    <!--finalSize当成一个变量在使用-->
+    <h2 :style="{fontSize:finalSize,backgroundColor:finalColor}">{{ message }}</h2>
+    <h2 :style="getStyle()">{{ message }}</h2>
+ </div>
+ <script src="vue.js"></script>
+ <script>
+     const app = new Vue({
+         el:"#app",
+         data:{
+             message:'ddd',
+             finalSize:'100px',
+             finalColor:'red'
+         },
+         methods: {
+             getStyle: function () {
+                 return {fontSize:this.finalSize,backgroundColor:this.finalColor}
+             }
+         }
+     })
+ </script>
+ </body>
+ </html>
