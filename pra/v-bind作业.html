@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        .active{background:red;}
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <li v-on="challage(index)" :class="active:" v-for="(item,index) in movies">{{ index }}{{item}}</li>
+</div>
+<script src="vue.js"></script>
+<script>
+    const app = new Vue({
+        el:"#app",
+        data:{
+            initial: 0,
+            movies:['星际穿越','大话西游','少年派','道门空间']
+        },
+       methods: {
+            challage:function (index) {
+
+            }
+       }
+    })
+</script>
+</body>
+</html>
