@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>{{ message }}</h2>
+    <!--    <button v-on:click="increment">+</button>-->
+    <!--    <button v-on:click="decrement">-</button>-->
+<!--    事件调用方法没有参数-->
+<!--    在调用方式，如何手动获取浏览器event-->
+    <button @click="btnClick()">按钮</button>
+<!--    在事件定义时，写方法时省略了小括号，但是方法本身需要一个参数,
+这个时候vue会默认将浏览器生成的event事件对象作为参数传入到方法-->
+
+    <button @click="btnClick2(123,event)">按钮2</button>
+</div>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data: {
+            message:'你好啊',
+            event:'fff'
+        },
+        methods: {
+            // btnClick() {
+            //     console.log("btnClick")
+            // },
+    btnClick2(event) {
+        console.log("btnClick",event)
+    }
+        }
+    })
+    //如果函数需要参数，但是没有传入，那么函数形参卫undefined
+    function abc(name) {
+        console.log(name)
+    }
+    abc();
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div id="app">
+
+</div>
+<script src="../vue.js"></script>
+<script type="text/javascript">
+    // 在开发中优先使用const，只有需要某一个标识符的时候才使用let
+    // 注意一：一旦给const修饰标识符被赋值之后，不能修改
+    // const name = 'aaa'
+    // name = 'fff'
+    // 注意二：在使用const定义标识符，必须进行赋值
+    // cosnt name;
+    // 注意三：常量的含义是指向的对象不能修改，但是可以改变对象内部属性
+    const obj = {
+        age:'12',
+        name:'zhangsan'
+    }
+    console.log(obj)
+    obj.name='ffff'
+    obj.age='35'
+    console.log(obj)
+</script>
+</body>
+</html>
