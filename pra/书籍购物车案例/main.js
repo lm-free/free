@@ -1,0 +1,42 @@
+const app = new Vue({
+	el:'#app',
+	data: {
+		books:[
+			{
+				id:1,
+				name:'算法导论',
+				date:'2001-9',
+				price:85.00,
+				count:1
+			},
+			{
+				id:2,
+				name:'算法导论2',
+				date:'2006-9',
+				price:85.00,
+				count:1
+			},
+			{
+				id:3,
+				name:'算法导论3',
+				date:'2003-9',
+				price:85.00,
+				count:1
+			},
+			{
+				id:4,
+				name:'算法导论4',
+				date:'2004-9',
+				price:85.00,
+				count:1
+			},
+			{
+				id:5,
+				name:'算法导论5',
+				date:'2005-9',
+				price:85.00,
+				count:1
+			},
+		]
+	}
+})

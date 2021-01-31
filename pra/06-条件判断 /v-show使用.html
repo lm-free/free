@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>那些数组是响应式的</title>
+</head>
+<body>
+<div id="app"> 
+<!-- 	v-if:当我们条件为false，包含if指令的元素，根本就不会存在dom中（改成true重新创建一个）
+    v-show：当我们条件为false时，v-show只是给元素增加行内样式（display：none）
+    -->
+    <h2 v-if="isShow" id="aaa">{{ message }}</h2>
+    <h2 v-show="isShow" id="bbb">{{ message }}</h2>
+</div>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data:{
+            message: 'ninhao对对对',
+            is
+            Show:true
+        }
+    })
+</script>
+</body>
+</html>

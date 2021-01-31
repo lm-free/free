@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-for添加key</title>
+</head>
+<body>
+<div id="app">
+	<ul>
+		<li v-for="item in letters" :key="item">{{ item }}</li>
+	</ul>
+</div>
+<script src="../vue.js"></script>
+<script type="text/javascript">
+	const app = new Vue({
+		el:'#app',
+		data: {
+			letters:['a','b','c','d']
+		}
+	})
+</script>
+</body>
+</html>

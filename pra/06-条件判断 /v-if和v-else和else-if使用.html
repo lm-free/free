@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+<div id="app">
+   <!--  <h2 v-if="score>=90">优秀</h2>
+    <h2 v-else-if="score>=80">lianghao</h2>
+    <h2 v-else-if="score>=60">jige </h2>
+    <h2 v-else>bujige</h2>
+
+    <h1 v-else>isshowxian</h1> -->
+    <h2>{{ result }}</h2>
+</div>
+
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data:{
+            score: 90
+            },
+            computed: {
+                result() {
+                    let showmessage = '';
+                    if(this.score>=90) {
+                        showmessage="youxiu"
+                    }
+                    else if(this.score>=80){
+                        showmessage="lianghao";
+                    }
+                    else if(this.score>=60) {
+                        showmessage='jige';
+                    }
+                    else{
+                        showmessage="bujige";
+                    }
+                    return showmessage
+                }
+                
+            }
+        })
+</script>
+</body>
+</html>
+    
