@@ -38,5 +38,34 @@ const app = new Vue({
 				count:1
 			},
 		]
+	},
+	methods: {
+		// getFinalPrice(price) {
+		// 	return '$' + price.toFixed(2)
+		// }
+		decrement (index) {
+			this.books[index].count--
+		},
+		increment (index) {
+			this.books[index].count++
+		},
+		removeHander (index) {
+			this.books.splice(index,1)
+		}
+	},
+	computed: {
+		//普通for循环 为什么用let 大括号作用域
+		totalPrice () {
+			let totalPrice = 0
+			for(let i =0; i<this.books.length;i++){
+				totalPrice += this.books[i].price*this.books[i].count
+			}
+			return totalPrice
+		}
+	},
+	filters: {
+		showPrice (price) {
+			return '$' + price.toFixed(2)
+		}
 	}
 })
