@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-model修饰符使用</title>
+</head>
+<body>
+<div id="app">
+	<!-- 修饰符：lazy -->
+	<input type="text" name="" v-model.lazy="message">
+	<h2>{{ message }}</h2>
+	<!-- 修饰符：number -->
+	<input type="number" name="" v-model.number="age">
+	<h2>{{ age }}{{ typeof age }}</h2>
+	<!-- 修饰符trim -->
+<input type="text" name="" v-model.trim="name">
+	<h2>{{ name }}</h2>
+</div>
+<script src="../vue.js"></script>
+<script type="text/javascript">
+	const app = new Vue({
+		el:'#app',
+		data: {
+			message:'nnn',
+			age:'',
+			name:''
+		}
+	})
+</script>
+</body>
+</html>
