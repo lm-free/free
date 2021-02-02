@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input补充</title>
+</head>
+<body>
+<form action="http://www.baidu.com" method="GET">
+    <p>
+        <label for="name">用户名：</label>
+        <input type="text" id="name" name="username">
+    </p>
+    <p>
+        <label for="">密 码：</label>
+        <input type="password" name="password">
+    </p>
+    <p>
+        <label for="">再次输入密码：</label>
+        <input type="password" name="password">
+    </p>
+    <p>
+        <label for="">密码保护问题：</label>
+        <select name="problem">
+            <option value="0">你母亲的名字是?</option>
+            <option value="1">你父亲的名字是?</option>
+            <option value="2">你最喜欢的人是?</option>
+            <option value="3">你毕业的学校是?</option>
+        </select>
+    </p>
+    <p>
+        <label for="">密码保护问题答案：</label>
+        <input type="text" name="password protection">
+    </p>
+    <p>
+        <label for="">性别：</label>
+        <input type="radio" name="sex" value="0">男
+        <input type="radio" name="sex" value="1">女
+    </p>
+    <p>
+        <label for="">爱好：</label>
+        <input type="checkbox" name="love" value="sing">唱歌
+        <input type="checkbox" name="love" value="dance">跳舞
+        <input type="checkbox" name="love" value="game">玩游戏
+        <input type="checkbox" name="love" value="study">学习
+    <table>其他爱好：</table>
+    <textarea cols="30" rows="10" name="love"></textarea>
+    </p>
+    <p>
+    <table>真实姓名：</table>
+    <input type="text" name="name">
+    </p>
+    <p>
+    <table>本人照片：</table>
+    <input type="file" name="pic">
+    </p>
+    <p>
+        <input type="submit" value="提交">
+        <input type="reset" value="重置">
+    </p>
+</form>
+</body>
+</html>

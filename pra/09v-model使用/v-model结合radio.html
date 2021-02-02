@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--    name可以不要-->
+    <label for="male"><input type="radio" id="male" name="sex" value="男" v-model="sex">nan</label>
+    <label for="female"><input type="radio" id="female" name="sex" value="女" v-model="sex">nv</label>
+<h2>nixians{{ sex }}</h2>
+</div>
+<script src="../vue.js"></script>
+<script>
+  const app = new Vue({
+      el:'#app',
+      data: {
+          message:'ninhia',
+          sex: '男'
+      }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+</div>
+<script src="../vue.js">
+
+</script>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data: {
+
+        }
+    })
+    //需求：小于一百 乘以2 汇总
+    //更简便写法
+    const nums = [10,20,30,40,777,555,666]
+    let total = nums.filter(n=> n < 100).map(n=> n * 2).reduce((pre,n) => pre + n)
+    console.log(total)
+    //高阶函数简写 这种函数式变成
+    // const nums = [10,20,30,40,777,555,666]
+    // let total = nums.filter(function (n) {
+    //     return n < 100
+    // }).map(function (n) {
+    //     return n * 2
+    // }).reduce(function (preValue,n) {
+    //     return preValue + n
+    // })
+    // console.log(total)
+    //打印小于一百数组
+
+    //filter函数使用
+    // const nums = [10,20,30,40,777,555,666]
+    // let newNums = nums.filter(function (n) {//第一次等于10 等于true 加入到新数组
+    //     return n < 100 //return 111 < 100  false
+    // })
+    // console.log(newNums)
+
+    // //map函数
+    // let new2Nums = newNums.map(function (n) {
+    //     return n*2
+    // })
+    // console.log(new2Nums)
+
+    // //reduce函数
+    // //reduce作用对数组中所有的内容进行汇总,函数传两个值
+    // //new2Nums.reduce(参数1，参数2)
+    // let total = new2Nums.reduce(function(preValue,n){
+    // return preValue + n
+    // },0)
+    // console.log(total)
+    //第一次： preValue 0是初始化值 n 20
+    //第二次：
+
+    //书籍相加简便写法
+    //return this.books.reduce(function (preValue,book) {
+    // return preValue + book.price * book.count
+    //})
+</script>
+</body>
+</html>

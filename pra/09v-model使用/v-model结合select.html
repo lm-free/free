@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--1.单选框-->
+    <!--    <label for="agree">-->
+    <!--       <input type="checkbox" id="agree" v-model="isAgree">同意&lt;!&ndash; 同意协议用的多&ndash;&gt;-->
+    <!--    </label>-->
+    <!--    <h2>{{isAgree}}</h2>-->
+    <!--    <button :disabled="!isAgree">下一步</button>-->
+    <!--    2.多选框-->
+    <select v-model="hobbies">
+        <option value="篮球">篮球  </option>
+        <option value="乒乓球">乒乓球  </option>
+        <option value="羽毛球">羽毛球  </option>
+        <option value="足球">足球  </option>
+        <option  value="排球">排球  </option>
+
+    </select>
+    <div>你选择的是{{ hobbies }}</div>
+</div>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data: {
+            message:'ninhia',
+            isAgree:false,
+            hobbies:[]
+        }
+    })
+</script>
+</body>
+</html>
+<script>
+    import HelloWorld from "../../htglxt/src/App";
+    export default {
+        components: {HelloWorld}
+    }
+</script>
