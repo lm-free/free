@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>titjjle</title>
+</head>
+<body>
+<div id="app">
+	<!-- 使用 -->
+	<cpn1></cpn1>
+	<cpn2></cpn2>
+</div>
+<script src="../vue.js"></script>
+<script type="text/javascript">
+
+	//1。组件构造器
+	const cpnC1 = Vue.extend({
+		template:`
+		<div>
+		<h2>我是标题</h2>
+		<p>我是内容，哈哈哈</p>
+		<p>我是内容《哈哈哈</p>
+		</div>
+		`
+	}),
+	const cpnC2 = Vue.extend({
+		template:`
+		<div>
+		<h2>我是标题</h2>
+		<p>我是内容，哈哈哈</p>
+		<p>我是内容《哈哈哈</p>
+		</div>
+		`,
+		//这样注册组件能在模版二使用
+		components:{
+			cpn1:cpnC1
+		}
+	})
+	const app = new Vue({
+		el:'#app',
+		data: {
+			message:'fff'
+		},
+		components:{
+			//cpn使用组建时标签名
+			'cpn2':cpnC2
+		}
+	})
+</script>
+</body>
+</html>

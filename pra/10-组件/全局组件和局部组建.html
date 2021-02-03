@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>title</title>
+</head>
+<body>
+<div id="app">
+	<!-- 使用 -->
+	<cpn></cpn>
+</div>
+<script src="../vue.js"></script>
+<script type="text/javascript">
+
+	//1创建组件化对象
+	const cpnC = Vue.extend({
+		template:`
+		<div>
+		<h2>我是标题</h2>
+		<p>我是内容，哈哈哈</p>
+		<p>我是内容《哈哈哈</p>
+		</div>
+		`
+	})
+	//2.注册组件(全局组件，意味着可以在多个vue的实列使用)
+	//Vue.component('cpn',cpnC)
+
+	//怎么组册是局部组建？
+	const app = new Vue({
+		el:'#app',
+		data: {
+			message:'fff'
+		},
+		components:{
+			//cpn使用组建时标签名
+			'cpn':cpnC
+		}
+	})
+</script>
+</body>
+</html>
