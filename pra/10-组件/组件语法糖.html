@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div id="app">
+
+    <cpn2></cpn2>
+</div>
+<script src="../vue.js"></script>
+<script type="text/javascript">
+
+    //创建组件化对象
+    //const cpnC = Vue.extend()
+    //2.注册组件
+    //语法糖注册全局组件
+    // Vue.component('cpn',{
+    //     template:`
+	// 	<div>
+	// 	<h2>我是标题</h2>
+	// 	<p>我是内容，哈哈哈</p>
+	// 	<p>我是内容《哈哈哈</p>
+	// 	</div>
+	// 	`
+    // })
+
+    const app = new Vue({
+        el:'#app',
+        data: {
+            message:'fff'
+        },
+        // 注册局部组件
+        components: {
+            'cpn2': {
+                template:`
+                <div>
+            	<h2>我是标题2</h2>
+             	<p>我是内容，哈哈哈</p>
+            	<p>我是内容《哈哈哈</p>
+            	</div>
+            	`
+            }
+        }
+    })
+</script>
+</body>
+</html>
