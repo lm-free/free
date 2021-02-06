@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>title</title>
+</head>
+<body>
+	<!-- 写这种语法 :child-Message="message" -->
+<div id="app">
+	<cpn :cinfo="info" :child-Message="message"></cpn>
+</div>
+<template id="cpn">
+	<div>
+	<h2>{{ cinfo }}</h2>
+	<h2>{{ childMessage }}</h2>
+	</div>
+</template>
+<script src="../vue.js"></script>
+<script type="text/javascript">
+	const cpn = {
+		template:'#cpn',
+		props:{
+			cinfo: {
+				type:Object,
+				default () {
+					return {}
+				}
+			},
+			childMessage: {
+				type:String,
+				default:''
+			}
+		}
+	}
+	const app = new Vue({
+		el:'#app',
+		data: {
+			info:{
+				name:'lllium',
+				age:'19',
+				height:1.88
+			},
+			message:'aaa',
+		},
+		
+		components: {
+			cpn
+		}
+	})
+</script>
+</body>
+</html>
