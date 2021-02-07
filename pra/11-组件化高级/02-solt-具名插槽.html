@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>title</title>
+</head>
+<body>
+
+<div id="app">
+	<!-- 1.插槽名字写法 -->
+	<cpn><p slot="center">hghg</p></cpn>
+
+</div>
+<template id="cpn">
+	<div>
+		<slot name="left"><p>zuob</p></slot>
+		<slot name="center"><p>zhongj</p></slot>
+		<slot name="right"><p>youb</p></slot>
+		<slot><p>hhhhh</p></slot>
+
+	</div>
+</template>
+<script src="../vue.js"></script>
+<script type="text/javascript">
+	const app = new Vue({
+		el:'#app',
+		data: {
+			message:"llll"
+		},
+		components:{
+			cpn:{
+				template:"#cpn"
+			}
+		}
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>title</title>
+</head>
+<body>
+	<!-- 1.插槽基本使用 组建直接放<slot></slot>
+
+	2。插槽默认值 <slot><p></p></slot>
+
+	3.如果有多个值，同时放入到组件中，一起作为替换元素
+-->
+<div id="app">
+	<cpn><button>anniu</button></cpn>
+	<cpn><span>lll</span></cpn>
+	<cpn><a href="">aaaa</a></cpn>
+	<cpn><button>kkk</button><p>eeee</p></cpn>
+
+</div>
+<template id="cpn">
+	<div>
+		<h2>我是组建</h2>
+		<p>hhhhhhh哈哈H</p>
+		<!-- slot可以放默认值 -->
+			<!-- <slot><button>yyy</button></slot>  -->
+			
+		<!-- <button>按钮</button> -->
+	</div>
+</template>
+<script src="../vue.js"></script>
+<script type="text/javascript">
+	const app = new Vue({
+		el:'#app',
+		data: {
+			message:"llll"
+		},
+		components:{
+			cpn:{
+				template:"#cpn"
+			}
+		}
+	})
+</script>
+</body>
+</html>

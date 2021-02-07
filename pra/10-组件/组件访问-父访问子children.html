@@ -7,6 +7,8 @@
 <body>
 <div id="app">
 <cpn></cpn>
+<cpn></cpn>
+<cpn ref="aaa"></cpn>
     <button @click="btnclick" >按钮</button>
 </div>
 <template id="cpn">
@@ -23,13 +25,27 @@
         },
         methods: {
             btnclick () {
-                console.log(this.$children)
-                this.$children[0].showmessage()
+                // 1.$children
+                // console.log(this.$children)
+                // this.$children[0].showmessage()
+                // for(let c of this.$children) {
+                //     console.log(c.name),
+                //     c.showmessage();
+                //console.log(this.$children[2].name);
+
+                //2.$refs  用的多
+                // 对象类型，默认是一个空的对象 ref=“aaa”
+                console.log(this.$refs.aaa.name)
             }
         },
         components: {
             cpn: {
                 template:'#cpn',
+                data () {
+                    return {
+                        name:'我是子组件'
+                    }
+                },
                 methods: {
                     showmessage () {
                         console.log('$children是一个数字类型')
