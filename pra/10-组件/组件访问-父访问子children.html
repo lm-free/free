@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<cpn></cpn>
+    <button @click="btnclick" >按钮</button>
+</div>
+<template id="cpn">
+    <div>
+        我是子组件
+    </div>
+</template>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data: {
+            message:'ninhao'
+        },
+        methods: {
+            btnclick () {
+                console.log(this.$children)
+                this.$children[0].showmessage()
+            }
+        },
+        components: {
+            cpn: {
+                template:'#cpn',
+                methods: {
+                    showmessage () {
+                        console.log('$children是一个数字类型')
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
