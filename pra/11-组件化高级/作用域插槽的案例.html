@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="app">
+		<cpn></cpn>
+		<cpn>
+			<!-- 目的是：拿到子组件数据pLanguage-->
+			<template slot-scope="slot">
+				<!-- <span v-for="item in slot.data">{{ item }}_</span> -->
+				<span>{{ slot.data .join('-')}}</span>
+			</template>
+		</cpn>
+		
+	</div>
+	<template id="cpn">
+		<div>
+			<!-- :data指向子组件pLanguage -->
+			<slot :data="pLanguage">
+				<ul><li v-for="item in pLanguage">{{ item }}</li></ul>
+			</slot>
+		</div>
+	</template>
+<script src="../vue.js"></script>
+<script type="text/javascript">
+	const app =new Vue({
+		el:'#app',
+		data: {
+			message:"ninhao",
+		},
+		components: {
+			cpn: {
+				template:'#cpn',
+				data () {
+					return {
+						pLanguage:['javascript','php','java','python']
+					}
+				},
+			}
+		}
+	})
+</script>
+</body>
+</html>
