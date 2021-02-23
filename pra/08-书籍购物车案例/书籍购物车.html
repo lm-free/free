@@ -40,15 +40,19 @@
             <td>{{ item.id }}</td>
             <td>{{ item.name }}</td>
             <td>{{ item.date }}</td>
-            <td>{{ item.price }}</td>
+            <td>{{ item.price | showfilters }}</td>
             <td>
-                <button @click="decrease(index)">-</button>
+                <button @click="decrease(index)" v-bind:disabled="item.count<+1">-</button>
                 {{ item.count }}
                 <button @click="increase(index)">+</button>
+            </td>
+            <td>
+                <button @click="remove(index)">移除</button>
             </td>
         </tr>
         </tbody>
     </table>
+    <h2>总计：{{all}}</h2>
 </div>
 </div>
 <script src="../vue.js"></script>
@@ -89,7 +93,7 @@
                     id:5,
                     name:'算法编导5',
                     date:'2001-9',
-                    price:85.00,
+                    price:85.000,
                     count:1
                 },
             ]
@@ -100,6 +104,24 @@
             },
             increase (index) {
                 this.book[index].count++
+            },
+            remove (index) {
+                this.book.splice(index,1)
+            }
+        },
+    filters: {
+        showfilters (price) {
+            return '$' + price.toFixed(2) //toFixed保留两位小数
+        }
+    },
+        computed: {
+            all () {
+                let toal = 0
+                for(let i = 0;i<this.book.length;i++)
+                {
+                toal += this.book[i].price * this.book[i].count
+                }
+                return toal
             }
         }
     })
