@@ -70,12 +70,14 @@
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__info_js__ = __webpack_require__(2);
+
+//command
 const {add,mul} = __webpack_require__(1)
 
 console.log(add(20,30))
 console.log(mul(20,30))
 
-
+//es6导入
 
 console.log(__WEBPACK_IMPORTED_MODULE_0__info_js__["a" /* name */])
 
@@ -103,7 +105,7 @@ module.exports = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const name = "lll"
+const name = "liu"
 /* harmony export (immutable) */ __webpack_exports__["a"] = name;
 
 const age = 11

@@ -1,0 +1,17 @@
+const path = require('path') //导入node path
+
+module.exports = {
+    entry:'./src/main.js',
+    output:{
+        path:path.resolve(__dirname,'dist'),//动态获取路径  
+        filename:'bundle.js'
+    },
+    module: {
+    	rules: [
+	      {
+	        test: /\.css$/i,
+	        use: ["style-loader", "css-loader"],
+	      },
+    	]
+    }
+}
