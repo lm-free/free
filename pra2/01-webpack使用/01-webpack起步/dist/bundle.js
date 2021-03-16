@@ -99,7 +99,6 @@ module.exports = {
     mul
 }
 
-
 /***/ }),
 /* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -113,7 +112,6 @@ const age = 11
 
 const height = 1.8
 /* unused harmony export height */
-
 
 
 /***/ })

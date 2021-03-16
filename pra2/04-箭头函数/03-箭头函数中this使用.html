@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //什么时候使用箭头函数
+    // setTimeout(function () {
+    // console.log(this)
+    // },1000)
+    // setTimeout (() => {
+    //     console.log(this)
+    // },1000)
+//问题：箭头函数中的this是如何查找的
+    //答：向外层作用域中，一层一层查找this，查到有this的定义
+    const obj = {
+        aaa() {
+           setTimeout(function () {
+               console.log(this)//window对象
+           })
+
+            setTimeout(() => {
+               console.log(this) //obj对象
+            })
+        }
+    }
+</script>
+</body>
+</html>
