@@ -20,6 +20,9 @@ import Home from '@/components/Home'
 import About from '@/components/About'
 import User from '@/components/User'
 
+const News = () => import('../components/HomeNews')
+const Message = () => import('../components/HomeMessage')
+const profile = () => import('../components/Profile')
 //1。通过vue.use(插件) 安装插件
 
 Vue.use(VueRouter)
@@ -33,12 +36,30 @@ const routes = [
   },
   {
     path:'/Home',
-    component:Home
+    component:Home,
+    children: [
+      {
+        path: '',
+        redirect:'News'
+      },
+      {
+        path:'News',
+        component:News
+      },
+      {
+        path:'Message',
+        component: Message
+      }
+    ]
   },
   {
-    path:'/User/:abc',
+    path:'/User/:id',
     component:User
   },
+  {
+    path:'/profile',
+    component: profile
+  }
 
 ]
 const router = new VueRouter({

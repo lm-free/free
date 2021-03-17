@@ -8,8 +8,12 @@
 <!--    <button @click="aboutClick">关于</button>-->
     <router-link to="/home">首页</router-link>
     <router-link to="/about">关于</router-link>
-    <router-link :to="'/user/'+userId">用户</router-link>
-    <img src="imgURL">
+<!--    <router-link :to="'/user/'+userId">用户</router-link>-->
+<!--&lt;!&ndash;    <router-link to="/profile">档案</router-link>&ndash;&gt;-->
+<!--    <router-link :to="{path:'/profile',query:{name:'why',age:18,height:1.88}}">档案</router-link>-->
+<!--    <img src="imgURL">-->
+    <button @click="userClick">用户</button>
+    <button @click="profileClick">档案</button>
     <router-view></router-view>
   </div>
 </template>
@@ -34,6 +38,19 @@ export default {
       // this.$router.push('/about')
       this.$router.replace('/about')
       console.log("about")
+    },
+    userClick () {
+      this.$router.push('/user/'+this.userId)
+    },
+    profileClick () {
+      this.$router.push({
+        path:'/profile',
+        query: {
+          name:'kekek',
+          age:18,
+          height:1.88
+        }
+      })
     }
   }
 }
