@@ -14,7 +14,9 @@
 <!--    <img src="imgURL">-->
     <button @click="userClick">用户</button>
     <button @click="profileClick">档案</button>
-    <router-view></router-view>
+    <keep-alive exclude="Profile,User">
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
@@ -28,17 +30,17 @@ export default {
     }
   },
   methods: {
-    homeClick () {
-      //通过代码修改路由
-      // this.$router.push('/home')
-      this.$router.replace('/home')
-      console.log("home")
-    },
-    aboutClick () {
-      // this.$router.push('/about')
-      this.$router.replace('/about')
-      console.log("about")
-    },
+    // homeClick () {
+    //   //通过代码修改路由
+    //   // this.$router.push('/home')
+    //   this.$router.replace('/home')
+    //   console.log("home")
+    // },
+    // aboutClick () {
+    //   // this.$router.push('/about')
+    //   this.$router.replace('/about')
+    //   console.log("about")
+    // },
     userClick () {
       this.$router.push('/user/'+this.userId)
     },

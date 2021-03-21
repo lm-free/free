@@ -35,8 +35,11 @@ const routes = [
     redirect:'/Home'
   },
   {
-    path:'/Home',
+    path:'/home',
     component:Home,
+    meta: {
+      title: '首页'
+    },
     children: [
       {
         path: '',
@@ -54,11 +57,24 @@ const routes = [
   },
   {
     path:'/User/:id',
-    component:User
+    component:User,
+    meta: {
+      title: '用户'
+    },
+  },
+  {
+    path:'/about',
+    component:About,
+    meta: {
+      title: '关于'
+    },
   },
   {
     path:'/profile',
-    component: profile
+    component: profile,
+    meta: {
+      title: '档案'
+    },
   }
 
 ]
@@ -68,6 +84,18 @@ const router = new VueRouter({
   mode:'history',
   linkActiveClass:'active'//统一改class属性
 })
+//前置钩子（hook）
+router.beforeEach((to,from,next) => {
+  // 从from跳转to
+  document.title = to.matched[0].meta.title
+  // console.log(to)
+  // console.log("###")
+  next()
+})
 
+//后置钩子 跳转后回调
+// router.afterEach((to,from) => {
+//   // console.log(",,,,")
+// })
 //3.将router对象传入到vue实例
 export default router

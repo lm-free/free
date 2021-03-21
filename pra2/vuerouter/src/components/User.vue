@@ -21,6 +21,12 @@ name: "user",
     console.log(this.$router)
     console.log(this.$route)
   }
+  },
+  created() {
+  console.log('user created')
+  },
+  destroyed() {
+    console.log('user destroyed')
   }
 }
 </script>

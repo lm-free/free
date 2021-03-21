@@ -7,7 +7,11 @@
 
 <script>
 export default {
-  name: "About"
+  name: "About",
+  created() {
+    console.log('crete'),
+      document.title='关于'
+  }
 }
 </script>
 

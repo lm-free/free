@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //使用定时器
+    // setTimeout(() => {
+    //     console.log("aaa")
+    // },1000)
+    // 1.参数 = 创建时promise传入函数
+    // resolve,reject本身他们又是函数
+//     // 第一次网络请求代码
+//     new Promise((resolve,reject) => {
+//         setTimeout(() => {
+//            resolve()
+//         },1000)
+//     }).then(() => {
+//         // 第一次拿到结果代码
+//         console.log('aaa');
+//         console.log('aaa')
+// //第二次网络请求代码
+//         return new Promise((resolve, reject) =>{
+//             resolve()
+//         })
+//     }).then(() =>{
+//         //第二次结果
+//        console.log('bbb') ;
+//        console.log("bbb")
+// //第三次网络请求代码
+//         return new Promise((resolve, reject) => {
+//             resolve()
+//         })
+//     }).then(() => {
+//         //第三次结果
+//         console.log('ccc');
+//         console.log('ccc')
+//     })
+  new Promise((resolve,reject) => {
+      setTimeout(() => {
+          // resolve('hello word') resole成功时
+          reject('err message')
+      },1000)
+  }).then((data) => {
+      console.log(data)//成功时候执行一下代码
+  }).catch((err) => {
+      console.log(err)//错误时执行一下代码
+  })
+</script>
+
+</body>
+</html>

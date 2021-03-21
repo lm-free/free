@@ -9,7 +9,13 @@
 
 <script>
 export default {
-  name: "Profile"
+  name: "Profile",
+  created() {
+    console.log("home created")
+  },
+  destroyed() {
+    console.log("home destroyed")
+  }
 }
 </script>
 
